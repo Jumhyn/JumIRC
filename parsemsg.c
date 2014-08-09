@@ -36,7 +36,7 @@ struct message *parse_str(char *arg) {
 }
 
 int cmdpass(char *buff, const char *pass) {
-  int n = snprintf(buff, MAX_MESSAGELEN, "%s %s", CMD_PASS, pass);
+  int n = snprintf(buff, MAX_MESSAGELEN, "%s %s", commandArray[CMD_PASS], pass);
   if (n < MAX_MESSAGELEN - 2) {
     buff[n] = CR;
     buff[n+1] = LF;
@@ -48,7 +48,7 @@ int cmdpass(char *buff, const char *pass) {
   return n;
 }
 int cmdnick(char *buff, const char *nick, const char *hop) {
-  int n = (hop[0] == '\0') ? (snprintf(buff, MAX_MESSAGELEN, "%s %s", CMD_NICK, nick)) : (snprintf(buff, MAX_MESSAGELEN, "%s %s %s", CMD_NICK, nick, hop));
+  int n = (hop[0] == '\0') ? (snprintf(buff, MAX_MESSAGELEN, "%s %s", commandArray[CMD_NICK], nick)) : (snprintf(buff, MAX_MESSAGELEN, "%s %s %s", commandArray[CMD_NICK], nick, hop));
   if (n < MAX_MESSAGELEN - 2) {
     buff[n] =CR;
     buff[n+1] =LF;
@@ -61,7 +61,7 @@ int cmdnick(char *buff, const char *nick, const char *hop) {
 }
 
 int cmduser(char *buff, const char *user, const char *host, const char *server, const char *real) {
-  int n = snprintf(buff, MAX_MESSAGELEN, "%s %s %s %s %s", CMD_USER, user, host, server, real);
+  int n = snprintf(buff, MAX_MESSAGELEN, "%s %s %s %s %s", commandArray[CMD_USER], user, host, server, real);
   if (n < MAX_MESSAGELEN - 2) {
     buff[n] = CR;
     buff[n+1] = LF;

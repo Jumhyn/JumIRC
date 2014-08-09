@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "message.h"
 
 void msg_free(struct message *msg) {

@@ -168,7 +168,6 @@ enum {
     RPL_TRACELINK,
     RPL_TRACECONNECTING,
     RPL_TRACEHANDSHAKE,
-    RPL_TRACEHANDSHAKE,
     RPL_TRACEUNKNOWN,
     RPL_TRACEOPERATOR,
     RPL_TRACEUSER,
@@ -198,7 +197,7 @@ enum {
     RPL_ADMINEMAIL,
 } reply_id;
 
-static const char *commandArray[] {
+static const char *commandArray[] = {
     "PASS",
     "NICK",
     "USER",
@@ -241,7 +240,7 @@ static const char *commandArray[] {
     "ISON",
 };
 
-static const char *replyArray[] {
+static const char *replyArray[] = {
     "401",
     "402",
     "403",
