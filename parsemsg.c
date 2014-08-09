@@ -47,6 +47,7 @@ int cmdpass(char *buff, const char *pass) {
   buff[n-1] = LF;
   return n;
 }
+
 int cmdnick(char *buff, const char *nick, const char *hop) {
   int n = (hop[0] == '\0') ? (snprintf(buff, MAX_MESSAGELEN, "%s %s", commandArray[CMD_NICK], nick)) : (snprintf(buff, MAX_MESSAGELEN, "%s %s %s", commandArray[CMD_NICK], nick, hop));
   if (n < MAX_MESSAGELEN - 2) {
